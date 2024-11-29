@@ -1,22 +1,26 @@
-import Formulaire from './components/formulaire';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import { useState } from 'react';
-
+import 'bootstrap/dist/css/bootstrap.css';
+import { useMemo } from 'react';
+import Liste from './components/listeVoiture';
+import Formulaire from './components/formulaire';
 function App() {
-  const [click, setClick] = useState({ modele: "", marque: "", immatriculation: "", });
-
-  async function ajouter(req, res) {
-    try {
-      const ajouter = await axios.post("localhost:4000/ajouter/voiture")
-      console.log(ajouter.data)
-      setClick(click)
-    } catch (error) {
-      res.status(500)
+  
+  const routers = useMemo(() => createBrowserRouter([
+    {
+      path: '/',
+      element: <Liste />,
+    },
+    {
+      path: '/enregistrerUneVoiture',
+      element: <Formulaire />,
     }
-  }
+  ]))
+
   return (
     <div className="App">
-      <Formulaire onChange={ajouter} />
+      <RouterProvider router={routers}/>
     </div>
   );
 }

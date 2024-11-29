@@ -1,37 +1,42 @@
 
 import { useState } from 'react';
-import '../css/formulaire.css'
-const Formulaire = ({onChange}) => {
-    const [change, setChange] = useState(()=>{setChange(change)})
-    return(
-        <div className="formulaire">
+import 'bootstrap/dist/css/bootstrap.css';
+const Formulaire = ({ onChange }) => {
 
-            <h1>Ajouter information sur la voitre</h1>
-            <form action={onChange}>
-                <div>
-                    <label htmlFor="">
-                        Marque :
-                    </label>
-                    <input type="text" placeholder="Votre nom" />
+    return (
+        <div className='container'>
+            <h1>Formulaire</h1>
+            <form>
+                <div className="row">
+                    <div className="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Model</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Marque</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="">
-                        Model :
-                    </label>
-                    <input type="text" placeholder="Le modele" />
+                <div className="row">
+                    <div className="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Couleur</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Immatriculation</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="">
-                        couleur :
-                    </label>
-                    <input type="text" placeholder="la couleur" />
-                </div>
-                <div>
-                    <label htmlFor="">
-                        Immatriculation :
-                    </label>
-                    <input type="text" placeholder="l'immatriculation" />
-                </div>
+                <button type="button" class="btn btn-primary">Enregistrer</button>
+
             </form>
         </div>
     )
