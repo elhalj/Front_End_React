@@ -9,7 +9,7 @@ function App() {
   
   const routers = useMemo(() => createBrowserRouter([
     {
-      path: '/',
+      path: '/afficherListeDesVoitures',
       element: <Liste />,
     },
     {
